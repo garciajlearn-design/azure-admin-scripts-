@@ -1,0 +1,5 @@
+$license = Get-MgSubscribedSku | Where-Object {$_.SkuPartNumber -eq "ENTERPRISEPACK"}
+
+Set-MgUserLicense -UserId "jdoe@tenant.onmicrosoft.com" `
+  -AddLicenses @{SkuId=$license.SkuId} `
+  -RemoveLicenses @()

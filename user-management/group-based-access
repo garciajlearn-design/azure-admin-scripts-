@@ -3,4 +3,6 @@ New-MgGroup -DisplayName "IT-Admins" `
   -SecurityEnabled $true `
   -MailNickname "itadmins"
 
+# Add user:
+
 Add-MgGroupMember -GroupId <GroupID> -DirectoryObjectId <UserID>

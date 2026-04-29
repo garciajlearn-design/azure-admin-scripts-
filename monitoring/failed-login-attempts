@@ -1,0 +1,3 @@
+Get-MgAuditLogSignIn |
+Where-Object {$_.Status.ErrorCode -ne 0} |
+Select UserPrincipalName, IPAddress, Status

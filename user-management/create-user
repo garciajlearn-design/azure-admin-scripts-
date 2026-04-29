@@ -1,0 +1,7 @@
+Connect-MgGraph -Scopes "User.ReadWrite.All"
+
+New-MgUser -DisplayName "John Doe" `
+  -UserPrincipalName "jdoe@yourtenant.onmicrosoft.com" `
+  -MailNickname "jdoe" `
+  -AccountEnabled $true `
+  -PasswordProfile @{Password="TempP@ss123"; ForceChangePasswordNextSignIn=$true}

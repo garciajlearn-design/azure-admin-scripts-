@@ -1,0 +1,7 @@
+Import-Csv users.csv | ForEach-Object {
+    New-MgUser -DisplayName $_.Name `
+      -UserPrincipalName $_.UPN `
+      -MailNickname $_.Alias `
+      -AccountEnabled $true `
+      -PasswordProfile @{Password="TempP@ss123"; ForceChangePasswordNextSignIn=$true}
+}

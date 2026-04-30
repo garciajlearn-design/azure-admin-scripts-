@@ -1,0 +1,1 @@
+az vm list -d --query "[].{Name:name, PowerState:powerState}" -o table
